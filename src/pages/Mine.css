@@ -1,0 +1,232 @@
+.mine-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.mine-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.mine-header h1 {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.mine-header p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+kbd {
+  background: #e0e0e0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.mine-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 700px) {
+  .mine-layout {
+    grid-template-columns: 1fr;
+  }
+  .mine-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---- Rig ---- */
+.mine-rig {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.rig-screen {
+  background: #1a1a2e;
+  border-radius: 16px;
+  width: 200px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 3px solid #333;
+  transition: box-shadow 0.15s;
+}
+
+.rig-screen.active {
+  box-shadow: 0 0 30px rgba(249, 168, 37, 0.6), 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.rig-dots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.rig-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.rig-screen.active .rig-dot {
+  animation-duration: 0.3s;
+}
+
+.rig-label {
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ---- Progress ---- */
+.mine-progress-wrap {
+  margin-bottom: 20px;
+}
+
+.mine-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-light);
+}
+
+.mine-progress-bar {
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.mine-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 50px;
+  transition: width 0.2s ease;
+}
+
+/* ---- Reward popup ---- */
+.mine-reward-popup {
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Mine Button ---- */
+.mine-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(249, 168, 37, 0.45);
+  transition: transform 0.1s, box-shadow 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mine-btn:hover {
+  box-shadow: 0 8px 24px rgba(249, 168, 37, 0.6);
+}
+
+.mine-btn.mining {
+  transform: scale(0.95);
+  box-shadow: 0 3px 10px rgba(249, 168, 37, 0.3);
+}
+
+/* ---- Stats ---- */
+.mine-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+
+.stat-card.highlight {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+}
+
+.stat-icon {
+  font-size: 2rem;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ---- Info ---- */
+.mine-info {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.mine-info h2 {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.mine-info p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}

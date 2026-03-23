@@ -1,0 +1,253 @@
+.learn-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.learn-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.learn-header h1 {
+  font-size: 2.2rem;
+  color: var(--secondary-dark);
+  margin-bottom: 8px;
+}
+
+.learn-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.learn-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 680px) {
+  .learn-layout {
+    grid-template-columns: 1fr;
+  }
+  .learn-nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+  .topic-btn {
+    flex-shrink: 0;
+    flex-direction: column;
+    min-width: 90px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ---- Topic Nav ---- */
+.learn-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.topic-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: var(--card-bg);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  text-align: left;
+  transition: background 0.2s, color 0.2s;
+}
+
+.topic-btn:hover {
+  background: var(--secondary);
+  color: #fff;
+}
+
+.topic-btn.active {
+  background: var(--secondary-dark);
+  color: #fff;
+}
+
+.topic-icon {
+  font-size: 1.3rem;
+}
+
+/* ---- Content Area ---- */
+.learn-content {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  min-height: 400px;
+}
+
+.learn-content h2 {
+  font-size: 1.6rem;
+  color: var(--secondary-dark);
+  margin-bottom: 20px;
+}
+
+.learn-content h3 {
+  font-size: 1.1rem;
+  margin: 20px 0 10px;
+  color: var(--primary-dark);
+}
+
+.learn-content p {
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-size: 1.02rem;
+}
+
+/* ---- Fact Box ---- */
+.learn-fact {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #fff9c4;
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.learn-fact > span:first-child {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+/* ---- List ---- */
+.learn-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px 0 16px;
+}
+
+.learn-list li {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.safety-list li {
+  background: #e8f5e9;
+}
+
+/* ---- Blockchain visual ---- */
+.learn-visual {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.block-chain-demo {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.demo-block {
+  background: var(--secondary);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 20px;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.demo-block:not(:last-child)::after {
+  content: '→';
+  font-size: 1.5rem;
+  color: var(--secondary-dark);
+  margin: 0 8px;
+  font-weight: 900;
+}
+
+.block-chain-demo {
+  gap: 0;
+}
+
+.block-chain-demo .demo-block:not(:last-child) {
+  margin-right: 30px;
+  position: relative;
+}
+
+.block-chain-demo .demo-block:not(:last-child)::after {
+  position: absolute;
+  right: -26px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.visual-caption {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-top: 10px;
+}
+
+/* ---- Key Cards ---- */
+.key-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 14px 0;
+}
+
+@media (max-width: 500px) {
+  .key-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.key-card {
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.key-card span {
+  font-size: 2rem;
+}
+
+.key-card strong {
+  font-size: 1rem;
+}
+
+.key-card p {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.key-card.public {
+  background: #e3f2fd;
+}
+
+.key-card.private {
+  background: #fce4ec;
+}
